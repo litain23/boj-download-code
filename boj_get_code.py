@@ -101,7 +101,8 @@ with requests.Session() as c:
             if correct != "맞았습니다!!":
                 continue
             source = child.td.get_text()
-            language = child.findAll("td")[6].a.get_text().strip()
+            language = child.findAll("td")[6].get_text().strip()
+            print(source, language, number);
             table_info = [number, source, language]
             table.append(table_info)
 
